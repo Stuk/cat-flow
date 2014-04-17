@@ -9,7 +9,6 @@
     <script type="text/montage-serialization">
     {
         "owner": {
-            "prototype": "ui/main.reel",
             "properties": {
                 "element": {"#": "main"},
                 "selectedSub": "catsstandingup"
@@ -43,19 +42,21 @@
                     ],
                     "selected": 0
                 },
+                "hasElasticScrolling": true,
                 "hasSelectedIndexScrolling": false,
                 "isSelectionEnabled": false,
                 "linearScrollingVector": [
                     -300,
                     0
                 ],
+                "momentumDuration": 1000,
                 "paths": [
                     {
                         "knots": [
                             {
                                 "previousHandlerPosition": [],
-                                "nextDensity": 10,
-                                "previousDensity": 10,
+                                "nextDensity": 5.6000000000000005,
+                                "previousDensity": 5.6000000000000005,
                                 "knotPosition": [
                                     -1230,
                                     80,
@@ -116,10 +117,11 @@
         "image": {
             "prototype": "digit/ui/image.reel",
             "properties": {
-                "element": {"#": "image"}
+                "element": {"#": "image"},
+                "crossOrigin": null
             },
             "bindings": {
-                "src": {"<-": "@flow.objectAtCurrentIteration"}
+                "src": {"<-": "@flow:iteration.object"}
             }
         },
         "rangeController": {
@@ -137,7 +139,7 @@
         <img id="nyan" src="nyan.gif">
         <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0" data-montage-id="flow">
             <div class="nyanblock">
-                <img data-montage-id="image" src="">
+                <img data-montage-id="image" src="" class="Main-catImage">
             </div>
         </div>
     </div>
